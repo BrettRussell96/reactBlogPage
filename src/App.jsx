@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css'
-import Posts from './components/PostDisplay';
+import PostManager from './components/PostManager';
 
 function App() {
 
@@ -9,7 +9,7 @@ function App() {
     <>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Posts />} />
+        <Route path="/" element={<PostManager />} />
       </Routes>
     </BrowserRouter>
       
