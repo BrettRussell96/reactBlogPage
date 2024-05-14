@@ -1,0 +1,17 @@
+nav {
+    background-color: rgb(59, 59, 59);
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+nav a {
+    color: #007bff;
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 18;
+}
+
+nav a.active {
+    color: rgb(105, 83, 141);
+    font-weight: bold;
+}
