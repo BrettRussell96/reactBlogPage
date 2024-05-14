@@ -22,11 +22,17 @@ export default class CreatePost extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
         const { title, content, author } = this.state;
-        this.props.addPost({ title, content, author });
+        const timestamp = new Date();
+        this.props.addPost({
+            title, 
+            content, 
+            author, 
+            created: timestamp 
+        });
         this.setState({
             title: "",
             content: "",
-            author: ""
+            author: ""          
         });
     }
 

@@ -11,6 +11,7 @@ export default class PostDisplay extends React.Component {
                     <h2>{post.title}</h2>
                     <p>{post.content}</p>
                     <p>{post.author}</p>
+                    <p>Posted on: {new Date(post.created).toLocaleString()}</p>
                 </div>
         ));
     };
