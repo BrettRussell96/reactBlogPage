@@ -1,0 +1,24 @@
+.post {
+    border: 1px solid yellow;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.post h2 {
+    color: rgb(119, 119, 197);
+}
+
+.post p {
+    font-size: 14px;
+}
+
+.post p:last-child {
+    font-style: italic;
+    color: lightgray;
+    font-size: 12px;
+}
+
+h1 {
+    color:rgb(165, 165, 209)
+}

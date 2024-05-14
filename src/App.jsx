@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import React from 'react';
-import './App.css'
+import './styles/App.css'
 
 import PostDisplay from './pages/PostDisplay';
 import CreatePost from './pages/CreatePost';
@@ -10,25 +10,30 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
+    const baseTime = new Date().getTime()
+
     this.state = {
       posts: [
         {
           id: 1,
           title: "Post 1",
           content: "This is the first post.",
-          author: ""
+          author: "",
+          created: new Date(baseTime - Math.random() * 100000000)
       },
       {
           id: 2,
           title: "Post 2",
           content: "This is the second post.",
-          author: ""
+          author: "",
+          created: new Date(baseTime - Math.random() * 100000000)
       },
       {
           id: 3,
           title: "Post 3",
           content: "This is the third post.",
-          author: ""
+          author: "",
+          created: new Date(baseTime - Math.random() * 100000000)
       }
       ]
     };
