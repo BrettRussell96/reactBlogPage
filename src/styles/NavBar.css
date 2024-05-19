@@ -1,17 +1,18 @@
 nav {
-    background-color: rgb(59, 59, 59);
+    background-color: rgb(48, 48, 48);
     padding: 10px 20px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 nav a {
-    color: #007bff;
+    color: #3b77cf;
     text-decoration: none;
     margin-right: 15px;
     font-size: 18;
+    transition: color 0.3s;
 }
 
 nav a.active {
-    color: rgb(105, 83, 141);
+    color: rgb(125, 205, 205);
     font-weight: bold;
 }

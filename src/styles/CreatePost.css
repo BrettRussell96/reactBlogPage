@@ -1,41 +1,28 @@
 .form-container {
     display: flex;
-    flex-direction: row;
-    width: 100%;
-    max-width: 600px;
+    flex-direction: column;
+    width: 90%;
+    max-width: 80%;
     margin: auto;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    align-items: center;
 }
 
 .input-row{
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
     margin-bottom: 10px;
 }
 
 .input-row > input,
 .input-row > textarea {
-    flex: 1;
-    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 100%;
 }
 
 .input-row > textarea {
     resize: vertical;
 } 
 
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: rgba(59, 59, 59);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: darkgray;
-}

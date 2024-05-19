@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #272727;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -35,6 +35,12 @@ h1 {
   line-height: 1.1;
 }
 
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -45,9 +51,10 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  margin-top: 10px;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #649aff;
 }
 button:focus,
 button:focus-visible {

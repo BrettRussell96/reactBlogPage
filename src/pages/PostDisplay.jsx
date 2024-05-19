@@ -57,46 +57,70 @@ export default class PostDisplay extends React.Component {
         const { posts } = this.props;
         const { editingPostId, editTitle, editContent, editAuthor } = this.state;
 
-        return posts.map(post => (
+        return (
+            <div className="post-container">
+                {posts.map((post) => 
             editingPostId === post.id ? (
                 <form key={post.id} onSubmit={this.handleEditSubmit}>
-                    <input
-                        type="text"
-                        name="editTitle"
-                        value={editTitle}
-                        onChange={this.handleEditChange}
-                    />
-                    <textarea 
-                        name="editContent"
-                        value={editContent}
-                        onChange={this.handleEditChange}
-                    />
-                    <input
-                        type="text"
-                        name="editAuthor"
-                        value={editAuthor}
-                        onChange={this.handleEditChange}
-                    />
-                    <button type="submit">Save</button>
+                    <div className="post-edit-form">
+                        <input
+                            type="text"
+                            name="editTitle"
+                            value={editTitle}
+                            onChange={this.handleEditChange}
+                            placeholder="Title"
+                        />
+                    </div>
+                    <div className="input-row">
+                        <textarea 
+                            name="editContent"
+                            value={editContent}
+                            onChange={this.handleEditChange}
+                            placeholder="Content"
+                        />
+                    </div>
+                    <div className="input-row">
+                        <input
+                            type="text"
+                            name="editAuthor"
+                            value={editAuthor}
+                            onChange={this.handleEditChange}
+                            placeholder="Author"
+                        />
+                    </div>
+                    <div className="button-container">
+                        <button type="submit">Save</button>
+                    </div>
+                    
+                    
+                    
+                    
+                    
                 </form>
             ) : (
                 <div key={post.id} className="post">
                     <h2>{post.title}</h2>
-                    <p>{post.content}</p>
-                    <p>{post.author}</p>
+                    <h5>{post.author}</h5>
+                    <p>{post.content}</p>                    
                     <p className="post-date">Posted on: {new Date(post.created).toLocaleString()}</p>
-                    <button onClick={() => this.toggleEditMode(post)}>Edit</button>
-                    <button onClick={() => this.handleDelete(post)}>Delete</button>
+                    <div className="button-container">
+                        <button onClick={() => this.toggleEditMode(post)}>Edit</button>
+                        <button onClick={() => this.handleDelete(post)}>Delete</button>
+                    </div>
+                    
                 </div>
             )
+        )}
+        </div>
+            
                 
-        ));
-    };
+        );
+    }
 
     render() {
         return (
             <div>
-                <h1>Blog Posts</h1>
+                <h1>My Blog</h1>
                 <div>{this.renderPosts()}</div>
             </div>
         );

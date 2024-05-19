@@ -40,27 +40,35 @@ export default class CreatePost extends React.Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <input 
-                    type="text"
-                    name="title"
-                    value={this.state.title}
-                    onChange={this.handleChange}
-                    placeholder="Title"
-                />
-                <textarea 
-                    name="content"
-                    value={this.state.content}
-                    onChange={this.handleChange}
-                    placeholder="Content"
-                />
-                <input 
-                    type="text"
-                    name="author"
-                    value={this.state.author}
-                    onChange={this.handleChange}
-                    placeholder="Author"
-                />
-                <button type="submit">Create Post</button>
+                <div className="input-row">
+                    <input 
+                        type="text"
+                        name="title"
+                        value={this.state.title}
+                        onChange={this.handleChange}
+                        placeholder="Title"
+                    />
+                </div>
+                <div className="input-row">
+                    <textarea 
+                        name="content"
+                        value={this.state.content}
+                        onChange={this.handleChange}
+                        placeholder="Content"
+                    />
+                </div>
+                <div className="input-row">
+                    <input 
+                        type="text"
+                        name="author"
+                        value={this.state.author}
+                        onChange={this.handleChange}
+                        placeholder="Author"
+                    />
+                </div>
+                <div className="button-container">
+                    <button type="submit">Create Post</button>
+                </div>              
             </form>
         );
     }
