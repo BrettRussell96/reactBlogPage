@@ -1,8 +1,2 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# React Blog App
+Decided to build a very basic frent-end blog app using React. The main purpose of this project was to develop more fluency with class component syntax. In future I will be focusing more on function component syntax, specifically using hooks, however, I wanted to have some practice with classes incase I ever work with a team on an older existing project that still uses them.
