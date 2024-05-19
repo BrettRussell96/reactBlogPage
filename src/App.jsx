@@ -39,6 +39,7 @@ class App extends React.Component {
     };
 
     this.addPost = this.addPost.bind(this);
+    this.updatePost = this.updatePost.bind(this);
   }
 
   addPost(post) {
@@ -47,12 +48,20 @@ class App extends React.Component {
     }));
   }
 
+  updatePost(updatedPost) {
+    this.setState((prevState) => ({
+      posts: prevState.posts.map((post) =>
+        post.id === updatedPost.id ? updatedPost : post
+      ),
+    }));
+  }
+
   render() {
     return (
       <BrowserRouter>
         <NavBar /> 
         <Routes>
-          <Route path="/" element={<PostDisplay posts={this.state.posts} />} />
+          <Route path="/" element={<PostDisplay posts={this.state.posts} updatePost={this.updatePost} />} />
           <Route path="/new" element={<CreatePost addPost={this.addPost}/>} />
         </Routes>
       </BrowserRouter>              
