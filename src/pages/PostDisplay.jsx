@@ -45,6 +45,13 @@ export default class PostDisplay extends React.Component {
         this.setState({ editingPostId: null});
     }
 
+    handleDelete(post) {
+        const confirmation = window.confirm(`Are you sure you want to delete the post "${post.title} permanently?`);
+        if (confirmation) {
+            this.props.deletePost(post.id);
+        }
+    }
+
     renderPosts() {
 
         const { posts } = this.props;
@@ -77,8 +84,9 @@ export default class PostDisplay extends React.Component {
                     <h2>{post.title}</h2>
                     <p>{post.content}</p>
                     <p>{post.author}</p>
-                    <p>Posted on: {new Date(post.created).toLocaleString()}</p>
+                    <p className="post-date">Posted on: {new Date(post.created).toLocaleString()}</p>
                     <button onClick={() => this.toggleEditMode(post)}>Edit</button>
+                    <button onClick={() => this.handleDelete(post)}>Delete</button>
                 </div>
             )
                 

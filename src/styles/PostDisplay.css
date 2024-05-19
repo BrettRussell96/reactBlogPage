@@ -13,10 +13,11 @@
     font-size: 14px;
 }
 
-.post p:last-child {
-    font-style: italic;
-    color: lightgray;
+.post .post-date {
     font-size: 12px;
+    color: lightgray;
+    font-style: italic;
+    margin-top: 10px;
 }
 
 h1 {

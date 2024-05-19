@@ -40,6 +40,7 @@ class App extends React.Component {
 
     this.addPost = this.addPost.bind(this);
     this.updatePost = this.updatePost.bind(this);
+    this.deletePost = this.deletePost.bind(this);
   }
 
   addPost(post) {
@@ -56,12 +57,18 @@ class App extends React.Component {
     }));
   }
 
+  deletePost(postId) {
+    this.setState((prevState) => ({
+      posts: prevState.posts.filter((post) => post.id !== postId)
+    }));
+  }
+
   render() {
     return (
       <BrowserRouter>
         <NavBar /> 
         <Routes>
-          <Route path="/" element={<PostDisplay posts={this.state.posts} updatePost={this.updatePost} />} />
+          <Route path="/" element={<PostDisplay posts={this.state.posts} updatePost={this.updatePost} deletePost={this.deletePost} />} />
           <Route path="/new" element={<CreatePost addPost={this.addPost}/>} />
         </Routes>
       </BrowserRouter>              
