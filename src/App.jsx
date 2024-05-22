@@ -13,6 +13,7 @@ class App extends React.Component {
     const baseTime = new Date().getTime()
 
     this.state = {
+      // example posts
       posts: [
         {
           id: 1,
@@ -42,7 +43,7 @@ class App extends React.Component {
     this.updatePost = this.updatePost.bind(this);
     this.deletePost = this.deletePost.bind(this);
   }
-
+  // functions to create and manipulate post data
   addPost(post) {
     this.setState(prevState => ({
       posts: [...prevState.posts, {...post, id: prevState.posts.length + 1}]
@@ -62,7 +63,7 @@ class App extends React.Component {
       posts: prevState.posts.filter((post) => post.id !== postId)
     }));
   }
-
+  
   render() {
     return (
       <BrowserRouter>
