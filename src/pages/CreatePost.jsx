@@ -1,25 +1,30 @@
+// External package import
 import React from "react";
+// Style import
 import '../styles/CreatePost.css'
 
-
+// CreatePost class component
 export default class CreatePost extends React.Component {
     constructor(props) {
         super(props);
+        // State for post data
         this.state ={
             title: "",
             content: "",
             author: "",
         };
-
+        // Binding functions to the component instance
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    // Function to handle input changes and update the state
     handleChange(event) {
         const { name, value } = event.target;
         this.setState({ [name]: value });
     }
 
+    // Function to handle form submission
     handleSubmit(event) {
         event.preventDefault();
         const { title, content, author } = this.state;
@@ -38,6 +43,8 @@ export default class CreatePost extends React.Component {
     }
 
     render() {
+        // Renders each form section and submit button
+        // Calls functions on change 
         return (
             <form onSubmit={this.handleSubmit}>
                 <div className="input-row">

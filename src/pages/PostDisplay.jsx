@@ -1,22 +1,26 @@
+// External package import
 import React from "react";
+// Style import
 import '../styles/PostDisplay.css';
 
-
+// PostDisplay class component
 export default class PostDisplay extends React.Component {
     constructor(props) {
         super(props);
+        // State for post edit form 
         this.state = {
             editingPostId: null,
             editTitle: "",
             editContent: "",
             editAuthor: ""
         };
-
+        // Binding functions to the component instance
         this.toggleEditMode = this.toggleEditMode.bind(this);
         this.handleEditChange = this.handleEditChange.bind(this);
         this.handleEditSubmit = this.handleEditSubmit.bind(this);
     }
 
+    // Function to toggle edit mode for a post
     toggleEditMode(post) {
         this.setState({
             editingPostId: post.id,
@@ -26,11 +30,13 @@ export default class PostDisplay extends React.Component {
         });
     }
 
+    // Function to handle input changes and update the state
     handleEditChange(event) {
         const { name, value } = event.target;
         this.setState({ [name]: value});
     }
 
+    // Function to handle form submission for editing a post
     handleEditSubmit(event) {
         event.preventDefault();
         const { editTitle, editContent, editAuthor, editingPostId } = this.state;
@@ -45,6 +51,7 @@ export default class PostDisplay extends React.Component {
         this.setState({ editingPostId: null});
     }
 
+    // Function to handle deleting posts
     handleDelete(post) {
         const confirmation = window.confirm(`Are you sure you want to delete the post "${post.title} permanently?`);
         if (confirmation) {
@@ -52,11 +59,13 @@ export default class PostDisplay extends React.Component {
         }
     }
 
+    // Function to render all posts
     renderPosts() {
 
         const { posts } = this.props;
         const { editingPostId, editTitle, editContent, editAuthor } = this.state;
-
+        // Renders the post edit form and sumbit button
+        // Functions are called on change
         return (
             <div className="post-container">
                 {posts.map((post) => 
@@ -97,6 +106,7 @@ export default class PostDisplay extends React.Component {
                     
                     
                 </form>
+                // renders template for post display and buttons
             ) : (
                 <div key={post.id} className="post">
                     <h2>{post.title}</h2>
@@ -118,6 +128,7 @@ export default class PostDisplay extends React.Component {
     }
 
     render() {
+        // renders output from renderPosts function with title
         return (
             <div>
                 <h1>My Blog</h1>

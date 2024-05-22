@@ -1,19 +1,23 @@
+// Imports from external packages
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import React from 'react';
+// Style import
 import './styles/App.css'
-
+// Component imports
 import PostDisplay from './pages/PostDisplay';
 import CreatePost from './pages/CreatePost';
 import NavBar from './components/NavBar';
 
+// App class component
 class App extends React.Component {
   constructor(props) {
     super(props);
 
-    const baseTime = new Date().getTime()
+    // Gets current time for creating example posts with random dates
+    const baseTime = new Date().getTime() 
 
     this.state = {
-      // example posts
+      // Example posts
       posts: [
         {
           id: 1,
@@ -38,18 +42,19 @@ class App extends React.Component {
       }
       ]
     };
-
+    // Binding functions to the component instance
     this.addPost = this.addPost.bind(this);
     this.updatePost = this.updatePost.bind(this);
     this.deletePost = this.deletePost.bind(this);
   }
-  // functions to create and manipulate post data
+  // Function to add a new post
   addPost(post) {
     this.setState(prevState => ({
       posts: [...prevState.posts, {...post, id: prevState.posts.length + 1}]
     }));
   }
 
+  // Function to update an existing post
   updatePost(updatedPost) {
     this.setState((prevState) => ({
       posts: prevState.posts.map((post) =>
@@ -58,6 +63,7 @@ class App extends React.Component {
     }));
   }
 
+  // Function to delete a post
   deletePost(postId) {
     this.setState((prevState) => ({
       posts: prevState.posts.filter((post) => post.id !== postId)
@@ -65,6 +71,7 @@ class App extends React.Component {
   }
   
   render() {
+    // Renders content and assigns functionality to each route
     return (
       <BrowserRouter>
         <NavBar /> 
